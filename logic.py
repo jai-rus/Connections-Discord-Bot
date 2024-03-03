@@ -45,12 +45,14 @@ class Logic:
         
         #splits the answer into multiple arrays
         userInput = userInput.split()
-        
+        print(userInput)
+
         #categories
         cat1 = word_bank[0:4]
         cat2 = word_bank[4:8]
         cat3 = word_bank[8:12]
         cat4 = word_bank[12:16]
+        print(cat4)
 
         try:
 
@@ -60,7 +62,7 @@ class Logic:
                 return True, 1
             elif (set(userInput) == set(cat3)):
                 return True, 2
-            elif (set(userInput) == (cat4)):
+            elif (set(userInput) == set(cat4)):
                 return True, 3
             else:
                 return False, -1
