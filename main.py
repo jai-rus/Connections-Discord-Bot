@@ -52,6 +52,10 @@ async def on_message(message):
                     await message.channel.send("Correct!")
                     await message.channel.send("You have " + str(tries) + " tries left") 
                     completedWords[check[1]] = 1 #TODO: Make it reprint the gameboard depending on how many words are left
+                    if all(i == 1 for i in completedWords):
+                        await message.channel.send("Congratulations! You did it!")
+                        logic.Logic.endGame()
+                        break
                 else:
                     tries -= 1
                     await message.channel.send("You've already done this one")
